@@ -1,5 +1,10 @@
 <!DOCTYPE HTML>
-<html><head>
+<!--[if lt IE 7 ]><html lang="zh-CN" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="zh-CN" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="zh-CN" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]><html lang="zh-CN" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="zh-CN" class="no-js"> <!--<![endif]-->
+<head>
 <meta http-equiv="Cache-Control" content="max-age=7200" />
 <%partial('module'); -%>
 <%body = trim(body); -%>
@@ -29,21 +34,36 @@ if (page.widgets && page.widgets.theme == false)
   })(window,document,'script','dataLayer','<%-UserConfig.GTM_ID%>');</script>
   <!-- End Google Tag Manager -->
   <%} -%>
-  <header id="header" class="container"><%- partial('_partial/header',{__: hexo.__('menu')}) %></header>
-  <div id='content' class="container">
-     <div class="page-header-wrapper">
-      <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><%-link_to('http://windows.microsoft.com/zh-cn/internet-explorer/download-ie','IE9')%></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
-      <div class="page-header"><h1><%- config.title %> <small><%- config.subtitle %></small></h1></div>
-     </div>
-     <div class="row">
-       <div id="main-col" <%if (sidebar) {%>class="alignleft col-sx-12 col-sm-8 col-md-9 col-lg-9"<%}%>>
-      <%- UserConfig.load_widgets('header',page) %>
-          <div id="wrapper"><%- body %></div><!--wapper-->
-       </div><!-- ID main-col END -->
-       <%if (sidebar) {%><aside id="sidebar" class="alignright col-sx-6 col-sm-4 col-md-3 col-lg-3"><%- partial('_partial/sidebar',{__: hexo.__('widgets')}) %></aside><%}%>
-       <div class="clearfix"></div>
-     </div><!-- row END -->
-  </div>
+
+  <div class="container">
+    <div class="content" role="main">
+      <div class="row">
+        <div class="col-sm-12 col-sm-offset-1">
+          <%- partial('_partial/header',{__: hexo.__('menu')}) %>
+        </div>
+      </div> <!-- // .row -->
+    </div>
+    <!--[if lt IE 9]>
+    <div class="content">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><%-link_to('http://windows.microsoft.com/zh-cn/internet-explorer/download-ie','IE9')%></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div>
+          </div>
+        </div>
+    </div>
+    <![endif]-->
+    <div class="content">
+      <div class="row">
+        <div <% if (sidebar) { %>class="col-sm-8"<%} else { %>class="col-sm-12"<% } %>>
+          <%- body %>
+        </div>
+        <% if (sidebar) { %>
+          <div class="col-sm-4"><%- partial('_partial/sidebar',{__: hexo.__('widgets')}) %></div>
+        <% } %>
+      </div> <!-- // .row -->
+    </div> <!-- // .content -->
+  </div> <!-- // .container -->
+
   <footer id="footer" class="container">
   <div class="panel panel-info">
   <%- UserConfig.load_widgets('footer',page) -%>

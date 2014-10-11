@@ -4,7 +4,7 @@
     $(this).find('img').each(function(){
       var alt = this.alt;
 
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="fancybox' + i + '" />').wrap('<div class="img_block"></div>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="fancybox' + i + '" />').wrap('<div class="carousel-inner"></div>');
      
       if(alt){$(this).after('<span class="caption">' + alt + '</span>')};
     });

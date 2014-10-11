@@ -49,7 +49,7 @@ if (oldDate < newDate) usercfg.SiteDate = oldDate + '-' + newDate;
 else usercfg.SiteDate = newDate;
 
 var load_static_widgets = function(name,options){
-  if (UserConfig.ajax_widgets) return "<div data-src='"+ name +"' class='ajax_widgets'>正在加载...</div>";
+  if (UserConfig.ajax_widgets) return "<div data-src='"+ name +"' class='widget-container ajax_widgets'>正在加载...</div>";
   return _partial('_widgets/static/' + name,{name: name,options: options});
 }
 

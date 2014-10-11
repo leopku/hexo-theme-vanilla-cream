@@ -20,14 +20,22 @@ modules:
   # respond 不要放到loaded_modules中,这个会自动加载
   # proxy 指定respond的proxy地址
   # 注: bootstrap的css文件和这个proxy需要在同一个域上
+
+  #
   respond: ## A fast & lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more).
     js: http://cdn.staticfile.org/respond.js/1.4.2/respond.min.js
     proxy: http://cdn.staticfile.org/respond.js/1.4.2/respond-proxy.html
+  
   jquery:
     js: http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js
+  jquery-ui:
+    css: css/jquery-ui-1.8.20.custom
+    js: http://cdn.bootcss.com/jqueryui/1.8.24/jquery-ui.min.js
   bootstrap: #强大的CSS框架，由Twitter的开发工程师推出
-    css: http://cdn.staticfile.org/twitter-bootstrap/3.1.0/css/bootstrap.min.css
-    js: http://cdn.staticfile.org/twitter-bootstrap/3.1.0/js/bootstrap.min.js
+    css: http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap.min.css
+    js: http://cdn.staticfile.org/twitter-bootstrap/3.0.0/js/bootstrap.min.js
+  
+  
   prettify: # Google Code Prettify 代码的高亮显示
     css: http://cdn.bootcss.com/prettify/r298/prettify.min.css
     js: http://cdn.bootcss.com/prettify/r298/prettify.min.js
@@ -50,10 +58,16 @@ modules:
     css:
     js: http://cdn.bootcss.com/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML
     #js: http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+  modernizr:
+    js: http://cdn.bootcss.com/modernizr/2.8.3/modernizr.js
+  # general:
+  #   js: js/gernal.js
+
   uyan: #有言评论系统
-    uid: 1880458
+    uid: 
   ujian: #友荐：为网站添加'猜你喜欢'功能
-    uid: 1880458
+    uid: 
   swiftype: #Swiftype配置，详情访问https://swiftype.com
     key: #对应的Engine Key 在https://swiftype.com/home可以看到。
 
@@ -66,24 +80,25 @@ modules:
 comments:
     provider: duoshuo
     show_count: true
-    short_name: hexochenall
+    short_name: himysql
 
 ## 站点分析统计代码功能组件
+
 # 加载在站点的footer位置
-analytics:
-  # provider 要加载的统计代码类型,可同时加载多少,使用","分隔. 如下就加载了51la和google的统计代码
-  # provider: 51la,google 
-  provider: 51la,google,cnzz,baidu
-  # google-analytics UA
-  google:
-  # 我要啦」免费统计 ID
-  51la:
-  # cnzz 免费统计
-  cnzz:
-    siteid: 5774006  #站点ID,在获取统计代码的页面的地址栏上可以看到siteid=xxxx或从代码中提取(一般是一串数字)
-    show: #显示样式  留空: 图片形式1; 1: 图片形式2; 2: 图片形式1; 其它值: 文字形式
-  baidu: # 百度统计对应站点的hash信息，在百度统计中获取的代码中的32个字符串信息 %3F 后面的32个十六进制字符串。类似下面的
-    siteid: 1442f50724afc42380b51f097c43082c
+# analytics:
+#   # provider 要加载的统计代码类型,可同时加载多少,使用","分隔. 如下就加载了51la和google的统计代码
+#   # provider: 51la,google 
+#   provider: 51la,google,cnzz,baidu
+#   # google-analytics UA
+#   google:
+#   # 我要啦」免费统计 ID
+#   51la:
+#   # cnzz 免费统计
+#   cnzz:
+#     siteid:   #站点ID,在获取统计代码的页面的地址栏上可以看到siteid=xxxx或从代码中提取(一般是一串数字)
+#     show: #显示样式  留空: 图片形式1; 1: 图片形式2; 2: 图片形式1; 其它值: 文字形式
+#   baidu: # 百度统计对应站点的hash信息，在百度统计中获取的代码中的32个字符串信息 %3F 后面的32个十六进制字符串。类似下面的
+#     siteid: 
 
 # 站点顶部菜单,支持子菜单
 menu:
@@ -92,7 +107,7 @@ menu:
   Archives: archives/
   其它链接:
     chenall: //chenall.net
-    gihtub: https://github.com/chenall/hexo-theme-chenall
+    gihtub: https://github.com/leopku
 
 # ajax_widgets是否使用jquery.load动态加载widget的内容,
 # 注: 部份小工具,像标签,分类,最近文章等,这些工具的内容在所有页面都是一样的,这时它就支持动态加载
