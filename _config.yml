@@ -85,20 +85,20 @@ comments:
 ## 站点分析统计代码功能组件
 
 # 加载在站点的footer位置
-# analytics:
-#   # provider 要加载的统计代码类型,可同时加载多少,使用","分隔. 如下就加载了51la和google的统计代码
-#   # provider: 51la,google 
-#   provider: 51la,google,cnzz,baidu
-#   # google-analytics UA
-#   google:
-#   # 我要啦」免费统计 ID
-#   51la:
-#   # cnzz 免费统计
-#   cnzz:
-#     siteid:   #站点ID,在获取统计代码的页面的地址栏上可以看到siteid=xxxx或从代码中提取(一般是一串数字)
-#     show: #显示样式  留空: 图片形式1; 1: 图片形式2; 2: 图片形式1; 其它值: 文字形式
-#   baidu: # 百度统计对应站点的hash信息，在百度统计中获取的代码中的32个字符串信息 %3F 后面的32个十六进制字符串。类似下面的
-#     siteid: 
+analytics:
+  # provider 要加载的统计代码类型,可同时加载多少,使用","分隔. 如下就加载了51la和google的统计代码
+  # provider: 51la,google 
+  provider: google
+  # google-analytics UA
+  google: UA-6386885-3
+  # 我要啦」免费统计 ID
+  51la:
+  # cnzz 免费统计
+  cnzz:
+    siteid:   #站点ID,在获取统计代码的页面的地址栏上可以看到siteid=xxxx或从代码中提取(一般是一串数字)
+    show: #显示样式  留空: 图片形式1; 1: 图片形式2; 2: 图片形式1; 其它值: 文字形式
+  baidu: # 百度统计对应站点的hash信息，在百度统计中获取的代码中的32个字符串信息 %3F 后面的32个十六进制字符串。类似下面的
+    siteid: 
 
 # 站点顶部菜单,支持子菜单
 menu:
